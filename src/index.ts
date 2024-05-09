@@ -33,6 +33,17 @@ class Blockchain {
     this.blocks.push(newBlock);
   }
   public getBlocks() {
-    return this.blocks;
+    return [...this.blocks];
   }
 }
+
+const blockchain = new Blockchain();
+
+blockchain.addBlock("first one");
+blockchain.addBlock("second one");
+blockchain.addBlock("third one");
+blockchain.addBlock("fourth one");
+
+blockchain.getBlocks().push(new Block("xxxxxxx", 11111, "HACKEDDDDDDD"));
+
+console.log(blockchain.getBlocks());
